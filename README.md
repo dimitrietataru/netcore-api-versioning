@@ -1,2 +1,1 @@
-# netcore-api-versioning
-.NET Core - API Versioning
+# .NET Core API Versioning
