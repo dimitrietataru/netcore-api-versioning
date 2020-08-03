@@ -3,21 +3,24 @@
 namespace NetCore.Prototype.ApiVersioning.App.Controllers
 {
     [ApiController]
+    [Route("api/v{version:apiVersion}")]
     [Produces("application/json")]
     public sealed class BarController : ControllerBase
     {
         [HttpGet]
-        [Route("api/v1/bar/test-one")]
+        [ApiVersion("1.0")]
+        [Route("bar/test")]
         public IActionResult TestOne()
         {
-            return NoContent();
+            return Ok("You requested /api/v1/bar/test");
         }
 
         [HttpGet]
-        [Route("api/v2/foo/test-two")]
+        [ApiVersion("2.0")]
+        [Route("bar/test")]
         public IActionResult TestTwo()
         {
-            return NoContent();
+            return Ok("You requested /api/v2/bar/test");
         }
     }
 }

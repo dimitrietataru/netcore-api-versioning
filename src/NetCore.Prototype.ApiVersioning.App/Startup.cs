@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NetCore.Prototype.ApiVersioning.App.Extensions;
 
 namespace NetCore.Prototype.ApiVersioning.App
 {
@@ -20,6 +21,7 @@ namespace NetCore.Prototype.ApiVersioning.App
             services.AddSingleton(configuration);
 
             services.AddControllers();
+            services.AddApiVersions();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
