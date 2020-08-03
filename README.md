@@ -62,3 +62,10 @@ public class BarController : ControllerBase
     }
 }
 ```
+
+### Routes
+* *Foo API*
+  * **api/v1/foo/test**, or equivalent **api/v1.0/foo/test**
+* *Bar API*
+  * **api/v1/bar/test**, or equivalent **api/v1.0/bar/test**
+  * **api/v2/bar/test**, or equivalent **api/v2.0/bar/test**
