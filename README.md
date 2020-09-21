@@ -1,9 +1,12 @@
 # .NET Core API Versioning
 
-### Configuration
+## Install
 ``` powershell
 PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning -Version 4.1.1
+PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -Version 4.1.1
 ```
+
+## Configuration
 ``` csharp
 public void ConfigureServices(IServiceCollection services)
 {
@@ -18,11 +21,17 @@ public void ConfigureServices(IServiceCollection services)
         apiVersioningOptions.ReportApiVersions = true;
     });
     
+    services.AddVersionedApiExplorer(apiExplorerOptions =>
+    {
+        apiExplorerOptions.GroupNameFormat = "'v'VVVV";
+        apiExplorerOptions.SubstituteApiVersionInUrl = true;
+    });
+    
     // ...
 }
 ```
 
-### Usage
+## Usage
 ``` csharp
 [ApiController]
 [ApiVersion("1.0")]
@@ -63,7 +72,7 @@ public class BarController : ControllerBase
 }
 ```
 
-### Routes
+## Routes
 * *Foo API*
   * **api/v1/foo/test**, or equivalent **api/v1.0/foo/test**
 * *Bar API*
