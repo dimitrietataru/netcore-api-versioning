@@ -14,6 +14,12 @@ namespace NetCore.Prototype.ApiVersioning.App.Extensions
                 apiVersioningOptions.ReportApiVersions = true;
             });
 
+            services.AddVersionedApiExplorer(apiExplorerOptions =>
+            {
+                apiExplorerOptions.GroupNameFormat = "'v'VVVV";
+                apiExplorerOptions.SubstituteApiVersionInUrl = true;
+            });
+
             return services;
         }
     }
