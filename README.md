@@ -1,4 +1,4 @@
-# .NET Core API Versioning
+# .NET API Versioning
 
 ## Install
 ``` powershell
