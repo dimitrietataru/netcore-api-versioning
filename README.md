@@ -2,8 +2,8 @@
 
 ## Install
 ``` powershell
-PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning -Version 4.1.1
-PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -Version 4.1.1
+PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning -Version 4.2.0
+PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -Version 4.2.0
 ```
 
 ## Configuration
