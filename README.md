@@ -2,8 +2,8 @@
 
 ## Install
 ``` powershell
-PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning -Version 4.2.0
-PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -Version 4.2.0
+PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning -Version 5.0.0
+PM> Install-Package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer -Version 5.0.0
 ```
 
 ## Configuration
@@ -43,7 +43,7 @@ public class FooController : ControllerBase
     [Route("foo/test")]
     public IActionResult Test()
     {
-        return Ok("You requested /api/v1/foo/test");
+        return Ok($"Echo from { HttpContext.Request.Path }");
     }
 }
 ```
@@ -59,7 +59,7 @@ public class BarController : ControllerBase
     [Route("bar/test")]
     public IActionResult TestOne()
     {
-        return Ok("You requested /api/v1/bar/test");
+        return Ok($"Echo from { HttpContext.Request.Path }");
     }
 
     [HttpGet]
@@ -67,7 +67,7 @@ public class BarController : ControllerBase
     [Route("bar/test")]
     public IActionResult TestTwo()
     {
-        return Ok("You requested /api/v2/bar/test");
+        return Ok($"Echo from { HttpContext.Request.Path }");
     }
 }
 ```
