@@ -12,7 +12,10 @@ namespace NetCore.Prototype.ApiVersioning.App.Controllers
         [Route("foo/test")]
         public IActionResult Test()
         {
-            return Ok("You requested /api/v1/foo/test");
+            string requestPath = HttpContext.Request.Path;
+            string response = $"Echo from { requestPath }";
+
+            return Ok(response);
         }
     }
 }
