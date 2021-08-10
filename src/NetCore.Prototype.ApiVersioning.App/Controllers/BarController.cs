@@ -12,7 +12,10 @@ namespace NetCore.Prototype.ApiVersioning.App.Controllers
         [Route("bar/test")]
         public IActionResult TestOne()
         {
-            return Ok("You requested /api/v1/bar/test");
+            string requestPath = HttpContext.Request.Path;
+            string response = $"Echo from { requestPath }";
+
+            return Ok(response);
         }
 
         [HttpGet]
@@ -20,7 +23,10 @@ namespace NetCore.Prototype.ApiVersioning.App.Controllers
         [Route("bar/test")]
         public IActionResult TestTwo()
         {
-            return Ok("You requested /api/v2/bar/test");
+            string requestPath = HttpContext.Request.Path;
+            string response = $"Echo from { requestPath }";
+
+            return Ok(response);
         }
     }
 }
